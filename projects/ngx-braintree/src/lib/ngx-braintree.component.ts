@@ -106,6 +106,7 @@ export class NgxBraintreeComponent implements OnInit {
   @Input() enabledStyle: any;
   @Input() disabledStyle: any;
   @Input() hideLoader = false;
+  @Input() purchaseData: any;
 
   clientToken: string;
   nonce: string;

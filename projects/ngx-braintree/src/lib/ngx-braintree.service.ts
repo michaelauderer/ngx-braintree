@@ -17,10 +17,10 @@ export class NgxBraintreeService {
       );
   }
 
-  createPurchase(createPurchaseURL: string, nonce: string, chargeAmount: number): Observable<any> {
+  createPurchase(createPurchaseURL: string, nonce: string, chargeAmount: number, purchaseData?: any): Observable<any> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http
-      .post(createPurchaseURL, { nonce: nonce, chargeAmount: chargeAmount }, { 'headers': headers })
+      .post(createPurchaseURL, { nonce: nonce, chargeAmount: chargeAmount, ...purchaseData }, { 'headers': headers })
       .pipe(map((response: any) => {
         return response;
       }));
